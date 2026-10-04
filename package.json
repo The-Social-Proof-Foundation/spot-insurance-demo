@@ -1,0 +1,20 @@
+{
+  "name": "spot-insurance-demo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Interactive demo of MySo SPoT prediction markets + insurance coverage with a simulated SPoT oracle.",
+  "scripts": {
+    "dev": "concurrently -n api,web -c magenta,cyan \"pnpm --filter api dev\" \"pnpm --filter web dev\"",
+    "dev:api": "pnpm --filter api dev",
+    "dev:web": "pnpm --filter web dev",
+    "build": "pnpm --filter api build && pnpm --filter web build",
+    "typecheck": "pnpm --filter api typecheck && pnpm --filter web exec tsc -b",
+    "start": "pnpm --filter api start",
+    "clean": "rm -rf node_modules api/node_modules web/node_modules api/dist web/dist"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "~5.9.3"
+  }
+}
